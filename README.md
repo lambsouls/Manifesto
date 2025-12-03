@@ -14,8 +14,13 @@ If you sympathize with, support, or are curious about communism, you can directl
 
 ## 文件说明 / File Description
 
-404.html  页面未找到错误页面  Page Not Found error page 
-403.html  访问被拒绝错误页面  Access Denied error page 
+404.html  
+页面未找到错误页面  
+Page Not Found error page 
+
+403.html  
+访问被拒绝错误页面 
+Access Denied error page 
 
 ---
 
