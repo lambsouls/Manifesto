@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頁面未找到 | Page Not Found</title>
+    <style>
+
+        :root {
+            --primary-red: #d86c6c;
+            --dark-red: #b85c5c;
+            --light-red: #f0a8a8;
+            --gold: #ffd700;
+            --dark-gray: #555;
+            --light-gray: #f9f9f9;
+            --white: #ffffff;
+            --medium-gray: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, var(--white), var(--medium-gray));
+            color: #333;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+            background: var(--white);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--medium-gray);
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--dark-red);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.05);
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: var(--dark-gray);
+        }
+        
+        .quote {
+            font-style: italic;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 3px solid var(--gold);
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            background: var(--primary-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            background: var(--dark-red);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+        
+        /* 語言切換按鈕樣式 */
+        .language-switcher {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .lang-btn {
+            background: var(--light-gray);
+            color: var(--dark-red);
+            border: 1px solid var(--medium-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn:hover, .lang-btn.active {
+            background: var(--gold);
+            color: var(--dark-red);
+        }
+        
+        /* 確保內容區塊正確顯示 */
+        .content-block {
+            display: block;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* 装饰元素 */
+        .decoration {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .decoration-1 {
+            top: 10%;
+            left: 10%;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+        
+        .decoration-2 {
+            bottom: 10%;
+            right: 10%;
+            background: var(--primary-red);
+            border-radius: 50%;
+        }
+        
+        /* 添加一些红色元素作为点缀 */
+        .red-accent {
+            color: var(--primary-red);
+        }
+    </style>
+</head>
+<body>
+    <!-- 装饰元素 -->
+    <div class="decoration decoration-1"></div>
+    <div class="decoration decoration-2"></div>
+    
+    <div class="container">
+        <!-- 語言切換按鈕 -->
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">繁中</button>
+        </div>
+        
+        <div class="error-code">404</div>
+        
+        <!-- 繁體中文內容 -->
+        <div id="zh-content" class="content-block hidden">
+            <div class="message">頁面未找到 · 但<span class="red-accent">探索永不止步</span></div>
+            <div class="quote">
+                "無產者在這個革命中失去的只是鎖鏈。<br>
+                他們獲得的將是整個世界。全世界無產者，聯合起來！"
+            </div>
+            <p>這個錯誤提醒我們：革命的道路上總會有未知的領域等待我們去探索。</p>
+            <div>
+                <a href="/" class="btn">返回首頁</a>
+                <a href="https://lambsouls.github.io/manifesto/" class="btn">探索更多</a>
+            </div>
+        </div>
+        
+        <!-- 英文內容 -->
+        <div id="en-content" class="content-block">
+            <div class="message">Page Not Found · But <span class="red-accent">Exploration Never Ends</span></div>
+            <div class="quote">
+                "The proletarians have nothing to lose but their chains.<br>
+                They have a world to win. Working men of all countries, unite!"
+            </div>
+            <p>This error reminds us: there are always unknown territories waiting to be explored on the path of revolution.</p>
+            <div>
+                <a href="/" class="btn">Back to Home</a>
+                <a href="https://lambsouls.github.io/manifesto/" class="btn">Explore More</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 語言切換邏輯
+        function switchLanguage(lang) {
+            // 隱藏所有內容
+            document.getElementById('zh-content').classList.add('hidden');
+            document.getElementById('en-content').classList.add('hidden');
+            
+            // 顯示選中的語言內容
+            document.getElementById(lang + '-content').classList.remove('hidden');
+            
+            // 更新按鈕狀態
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
+        
+        // 添加按鈕事件監聽器
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                switchLanguage(btn.dataset.lang);
+            });
+        });
+        
+        // 8秒後自動重定向
+        setTimeout(() => {
+            window.location.href = 'https://lambsouls.github.io/manifesto/';
+        }, 8000);
+    </script>
+</body>
+</html>
