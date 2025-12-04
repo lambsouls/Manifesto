@@ -38,11 +38,13 @@ If you sympathize with, support, or are curious about communism, you can directl
 
 ## 预览 / Preview
 
-### 404页面效果
-[![404 Preview](./pic/404.png)](https://lambsouls.github.io/404.html)
-
 ### 403页面效果
-[![403 Preview](./pic/403.png)](https://lambsouls.github.io/403.html)
+
+[403页面](https://lambsouls.github.io/403.html)
+
+### 404页面效果
+
+[404页面](https://lambsouls.github.io/404.html)
 
 
 
